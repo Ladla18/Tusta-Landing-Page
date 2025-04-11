@@ -12,8 +12,18 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Apt.",
   description: "Apt. Trading Platform",
+  icons: {
+    icon: [
+      { url: "/images/darkmodelogo.png" },
+      { url: "/images/darkmodelogo.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: {
+      url: "/images/darkmodelogo.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
+  },
 };
-
 
 export default function RootLayout({
   children,
@@ -22,9 +32,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/images/darkmodelogo.png" />
-      </head>
       <body suppressHydrationWarning className={inter.variable}>
         <main className="font-sans antialiased">{children}</main>
         <Script id="grammarly-handler" strategy="afterInteractive">
