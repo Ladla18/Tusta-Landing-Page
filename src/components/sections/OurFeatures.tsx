@@ -132,11 +132,11 @@ export default function OurFeatures() {
           <div className="border-l border-r border-b border-gray-300 bg-white rounded-b-lg shadow-xl overflow-hidden">
             <div className="w-full h-full flex items-center justify-center overflow-hidden">
               <Image
-                src="/images/image.png"
+                src="/images/Screenshot 2025-04-11 135059.png"
                 alt="Mobile view"
                 className="max-w-full max-h-full object-contain"
-                width={240}
-                height={480}
+                width={1030}
+                height={1040}
               />
             </div>
           </div>
