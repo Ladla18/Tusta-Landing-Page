@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description: "Apt. Trading Platform",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,6 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/darkmodelogo.png" />
+      </head>
       <body suppressHydrationWarning className={inter.variable}>
         <main className="font-sans antialiased">{children}</main>
         <Script id="grammarly-handler" strategy="afterInteractive">
