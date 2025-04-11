@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Testimonials() {
   const testimonials = [
     {
@@ -33,7 +31,7 @@ export default function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
-            Don't just take our word for it. See what our customers have
+            Don&apos;t just take our word for it. See what our customers have
             achieved with TUSTA.
           </p>
         </div>
@@ -61,7 +59,7 @@ export default function Testimonials() {
                 ))}
               </div>
               <blockquote className="flex-1 mb-4 italic text-lg">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center overflow-hidden">

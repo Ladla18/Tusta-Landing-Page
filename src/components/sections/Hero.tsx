@@ -9,12 +9,15 @@ export default function Hero() {
       <Header />
       <div className="container mx-auto flex flex-col items-center justify-center pt-20 py-5 md:pt-36 md:py-5 lg:pt-36 lg:py-5 text-center">
         <div className="space-y-6 max-w-4xl mx-auto">
-          <div className="flex justify-center" >
+          <div className="flex justify-center">
             <div className="flex justify-center mb-4 shadow-md rounded-full w-max">
               <button className="bg-white text-black font-bold px-4 py-2 rounded-l-full rounded-r-none">
-                What's new?
+                What&apos;s new?
               </button>
-              <span className="w-0.1 h-6/12 mt-3 inline-block bg-gray-100" style={{border: "0.1px solid gray"}}></span>
+              <span
+                className="w-0.1 h-6/12 mt-3 inline-block bg-gray-100"
+                style={{ border: "0.1px solid gray" }}
+              ></span>
               <button className="bg-white font-medium text-black px-4 py-2 rounded-r-full rounded-l-none">
                 Introducing Workforce
               </button>

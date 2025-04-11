@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export default function Features() {
   const sectionRef = useRef(null);
@@ -40,10 +41,12 @@ export default function Features() {
           }}
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
-            <img
+            <Image
               src="/images/image.png"
               alt="Mobile view"
               className="max-w-full max-h-full object-contain"
+              width={240}
+              height={480}
             />
           </div>
         </motion.div>
@@ -59,10 +62,12 @@ export default function Features() {
           }}
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
-            <img
+            <Image
               src="/images/Screenshot 2025-04-11 135059.png"
               alt="Laptop view"
               className="max-w-full max-h-full object-contain"
+              width={1000}
+              height={500}
             />
           </div>
         </motion.div>

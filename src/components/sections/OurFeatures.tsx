@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function OurFeatures() {
   return (
@@ -13,7 +13,7 @@ export default function OurFeatures() {
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             A modern trading platform with all the tools you need to succeed in
-            today's markets
+            today&apos;s markets
           </p>
         </div>
 
@@ -130,11 +130,13 @@ export default function OurFeatures() {
 
           {/* Browser Content */}
           <div className="border-l border-r border-b border-gray-300 bg-white rounded-b-lg shadow-xl overflow-hidden">
-            <div className="w-full h-full">
-              {/* Dashboard Content */}
-              <img
-                src="/images/Screenshot 2025-04-11 135059.png"
-                alt="Dashboard"
+            <div className="w-full h-full flex items-center justify-center overflow-hidden">
+              <Image
+                src="/images/image.png"
+                alt="Mobile view"
+                className="max-w-full max-h-full object-contain"
+                width={240}
+                height={480}
               />
             </div>
           </div>
@@ -144,7 +146,7 @@ export default function OurFeatures() {
               Brokers like Zerodha, Upstox, and Groww had a early-mover
               advantage by leading the shift to web & mobile-based trading — a
               move that helped them emerge as industry leaders. They dominate
-              48% of today’s market participation.
+              48% of today&apos;s market participation.
             </p>
           </div>
         </div>

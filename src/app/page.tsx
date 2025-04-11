@@ -1,10 +1,5 @@
 import Hero from "../components/sections/Hero";
 import Features from "../components/sections/Features";
-import About from "../components/sections/About";
-import Testimonials from "../components/sections/Testimonials";
-import Pricing from "../components/sections/Pricing";
-import Contact from "../components/sections/Contact";
-import Footer from "../components/sections/Footer";
 import Journey from "../components/sections/Journey";
 import OurFeatures from "@/components/sections/OurFeatures";
 import BuiltForBrokers from "@/components/sections/BuiltForBrokers";
@@ -18,11 +13,7 @@ export default function Home() {
       <OurFeatures />
       <BuiltForBrokers />
       <BrokeragePotential />
-      {/* <About />
-      <Testimonials />
-      <Pricing />
-      <Contact />
-      <Footer /> */}
+   
     </main>
   );
 }

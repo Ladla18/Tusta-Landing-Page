@@ -4,6 +4,7 @@ import {
   useTransform,
   useScroll,
   useAnimationControls,
+  MotionValue,
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
@@ -11,7 +12,7 @@ const Journey = () => {
   return (
     <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
       <span className="text-white text-5xl font-normal text-center block">
-        Being First Isn't Just Smart - It's Profitable
+        Being First Isn&apos;t Just Smart - It&apos;s Profitable
       </span>
       <HorizontalScrollCarousel />
     </div>
@@ -236,7 +237,7 @@ const TimelineCard = ({
   opacity,
 }: {
   item: TimelineItem;
-  opacity: any;
+  opacity: MotionValue<number>;
 }) => {
   return (
     <motion.div className="w-1/2 relative px-20" style={{ opacity }}>

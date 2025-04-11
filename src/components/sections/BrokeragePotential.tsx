@@ -37,7 +37,7 @@ export default function BrokeragePotential() {
     }
 
     // Add commas after every 2 digits in the remaining part
-    let formatted =
+    const formatted =
       otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
 
     return formatted;
