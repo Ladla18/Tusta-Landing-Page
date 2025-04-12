@@ -117,7 +117,7 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="container mx-auto px-4 h-full flex items-center relative">
+        <div className="w-full h-full flex items-center relative">
           <div className="relative w-full">
             {/* Timeline line */}
             <div className="absolute h-1 bg-white/30 w-full top-12 left-0"></div>
@@ -151,7 +151,7 @@ const HorizontalScrollCarousel = () => {
             </div>
 
             {/* Line Chart SVG */}
-            <div className="absolute top-10/12 inset-0 w-full h-1/2 pointer-events-none z-10">
+            <div className="absolute hidden sm:block top-10/12 inset-0 w-full h-1/2 pointer-events-none z-10">
               <svg
                 className="w-full h-full"
                 viewBox="0 0 1200 200"
@@ -240,7 +240,7 @@ const TimelineCard = ({
   opacity: MotionValue<number>;
 }) => {
   return (
-    <motion.div className="w-1/2 relative px-20" style={{ opacity }}>
+    <motion.div className="sm:w-1/2 w-full relative px-2 sm:px-40" style={{ opacity }}>
       {/* Year and marker */}
       <div className="mb-10 relative">
         <h2 className="text-5xl font-bold text-white ms-5">{item.year}</h2>
@@ -250,7 +250,7 @@ const TimelineCard = ({
       {/* Content */}
       <div className="text-white pr-10">
         <h3 className="text-3xl font-normal mb-4">{item.title}</h3>
-        <p className="text-white/90 font-normal text-justify text-lg mb-8">
+        <p className="text-white/90 font-normal text-justify text-sm sm:text-lg mb-8">
           {item.description}
         </p>
 
