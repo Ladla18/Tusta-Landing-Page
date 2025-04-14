@@ -130,8 +130,8 @@ const HorizontalScrollCarousel = () => {
     [0, 0.5, 1]
   );
 
-  // Line chart animation
-  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0.1, 1]);
+  // Line chart animation is commented out, so removing the unused variable
+  // const pathLength = useTransform(scrollYProgress, [0, 0.8], [0.1, 1]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
