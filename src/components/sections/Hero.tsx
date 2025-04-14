@@ -9,7 +9,7 @@ export default function Hero() {
       <Header />
       <div className="container mx-auto flex flex-col items-center justify-center pt-20 py-5 md:pt-36 md:py-5 lg:pt-36 lg:py-5 text-center">
         <div className="space-y-6 max-w-4xl mx-auto">
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-10 sm:mt-0">
             <div className="flex justify-center mb-4 shadow-md rounded-full w-max">
               <button className="bg-white text-black font-bold px-4 py-2 rounded-l-full rounded-r-none">
                 What&apos;s new?
@@ -23,17 +23,17 @@ export default function Hero() {
               </button>
             </div>
           </div>
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-5xl sm:text-6xl font-bold">
             Bring Algo Trading to Your Clients
             <span className="text-blue-600"> Fast & Compliant </span> with Apt.
           </h1>
-          <p className="mx-auto max-w-[700px] text-lg md:text-base text-gray-600 mt-4">
+          <p className="mx-auto max-w-[700px] text-center px-5 text-lg md:text-base text-gray-600 mt-4">
             Apt is the only algo trading platform built exclusively for brokers.
             Fully compliant, reliable, and designed to boost their client
             retention. Discover an AI-powered automation platform that makes
             algo trading simple, fast, and scalable.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+          <div className="flex sm:flex-row justify-center gap-4 mt-8">
             <Link
               href="#demo"
               className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-600 px-8 py-3 text-base font-medium text-white shadow hover:bg-blue-500 transition-colors"

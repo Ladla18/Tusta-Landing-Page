@@ -4,6 +4,9 @@ import Journey from "../components/sections/Journey";
 import OurFeatures from "@/components/sections/OurFeatures";
 import BuiltForBrokers from "@/components/sections/BuiltForBrokers";
 import BrokeragePotential from "@/components/sections/BrokeragePotential";
+import Compliances from "@/components/sections/Compliances";
+import Contact from "@/components/sections/Contact";
+import Countdown from "@/components/sections/Countdown";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
@@ -13,7 +16,9 @@ export default function Home() {
       <OurFeatures />
       <BuiltForBrokers />
       <BrokeragePotential />
-   
+      <Compliances />
+      <Countdown /> 
+      <Contact />
     </main>
   );
 }

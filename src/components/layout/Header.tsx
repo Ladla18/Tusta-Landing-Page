@@ -60,7 +60,7 @@ export default function Header() {
         <div className="flex items-center gap-4 md:gap-6">
           <Link
             href="#trial"
-            className="hidden md:inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-2 text-[15px] font-medium text-white transition-all duration-300 hover:shadow-md hover:shadow-blue-300/30 hover:-translate-y-0.5"
+            className="hidden md:inline-flex h-10 items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-2 text-[15px] font-medium text-white transition-all duration-300 hover:shadow-md hover:shadow-blue-300/30 hover:-translate-y-0.5"
           >
             Sign Up
           </Link>

@@ -25,6 +25,9 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
+  // Add state for viewport width
+  const [viewportWidth, setViewportWidth] = useState(0);
+
   // Animation controls for each dot
   const firstDotControls = useAnimationControls();
   const secondDotControls = useAnimationControls();
@@ -38,6 +41,19 @@ const HorizontalScrollCarousel = () => {
     third: false,
     fourth: false,
   });
+
+  // Initialize viewport width after component mounts (client-side only)
+  useEffect(() => {
+    setViewportWidth(window.innerWidth);
+
+    // Optional: handle resize events
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Handle dot animations based on scroll position
   useEffect(() => {
@@ -89,9 +105,12 @@ const HorizontalScrollCarousel = () => {
     fourthDotControls,
   ]);
 
-  // Adjust this value to show exactly two cards at once
-  // -66% means we'll scroll through 2 sets of 2 cards (4 total)
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-48%"]);
+  // Use the viewportWidth state instead of directly accessing window.innerWidth
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", viewportWidth < 500 ? "-78%" : "-48%"]
+  );
 
   // Create opacity animations for each card
   const firstCardOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
@@ -151,13 +170,13 @@ const HorizontalScrollCarousel = () => {
             </div>
 
             {/* Line Chart SVG */}
-            <div className="absolute hidden sm:block top-10/12 inset-0 w-full h-1/2 pointer-events-none z-10">
+            {/* <div className="absolute hidden sm:block top-10/12 inset-0 w-full h-1/2 pointer-events-none z-10">
               <svg
                 className="w-full h-full"
                 viewBox="0 0 1200 200"
                 preserveAspectRatio="none"
               >
-                {/* Animated line path */}
+              
                 <motion.path
                   d="M0,180 C30,185 45,175 60,182 S75,170 90,175 S105,165 120,180 S135,170 150,175 S165,160 180,168 S195,130 210,165 S225,150 240,90 S255,145 270,152 S285,142 300,149 S315,140 330,143 S345,135 360,142 S375,132 390,125 S400,130 410,50 S420,125 430,118 S440,122 450,115 S460,180 470,112 S480,118 490,110 S500,108 512,112 S525,107 540,98 S555,103 570,95 S585,98 598,88 S610,40 620,82 S630,88 640,77 S652,82 665,72 S675,78 685,68 S695,72 710,64 S725,170 740,60 S755,64 770,58 S785,62 800,65 S815,55 830,58 S840,180 855,55 S865,45 875,50 S885,42 895,45 S905,38 915,42 S925,36 935,40 S945,34 955,38 S965,32 975,35 S985,30 995,33 S1005,28 1015,30 S1025,26 1035,28 S1045,130 1055,26 S1065,22 1075,24 S1085,20 1095,22 S1105,19 1115,20 S1125,18 1135,19 S1145,17 1155,18 S1165,16 1175,17 S1185,15 1200,15"
                   fill="none"
@@ -170,7 +189,7 @@ const HorizontalScrollCarousel = () => {
                   }}
                 />
 
-                {/* Animated dots at year points */}
+              
                 <motion.circle
                   cx="50"
                   cy="180"
@@ -224,7 +243,7 @@ const HorizontalScrollCarousel = () => {
                   }}
                 />
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -240,7 +259,10 @@ const TimelineCard = ({
   opacity: MotionValue<number>;
 }) => {
   return (
-    <motion.div className="sm:w-1/2 w-full relative px-2 sm:px-40" style={{ opacity }}>
+    <motion.div
+      className="sm:w-1/2 w-full relative px-2 sm:px-40"
+      style={{ opacity }}
+    >
       {/* Year and marker */}
       <div className="mb-10 relative">
         <h2 className="text-5xl font-bold text-white ms-5">{item.year}</h2>
@@ -248,7 +270,7 @@ const TimelineCard = ({
       </div>
 
       {/* Content */}
-      <div className="text-white pr-10">
+      <div className="text-white sm:pr-10">
         <h3 className="text-3xl font-normal mb-4">{item.title}</h3>
         <p className="text-white/90 font-normal text-justify text-sm sm:text-lg mb-8">
           {item.description}
