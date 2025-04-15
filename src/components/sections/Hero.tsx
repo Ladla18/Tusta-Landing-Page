@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 
 // Predefined positions for the decorative circles to avoid hydration mismatches
 const CIRCLE_POSITIONS = [
-  { top: "25%", left: "15%" },
-  { top: "65%", left: "25%" },
+  { top: "20%", left: "15%" },
+  { top: "30%", left: "25%" },
   { top: "35%", left: "75%" },
-  { top: "80%", left: "60%" },
-  { top: "45%", left: "40%" },
+  { top: "15%", left: "60%" },
+  { top: "25%", left: "40%" },
 ];
 
 export default function Hero() {
@@ -250,61 +250,7 @@ export default function Hero() {
           </circle>
         </svg>
 
-        {/* Connecting circuit to CTA buttons */}
-        <svg
-          className="absolute top-[67%] left-1/2 -translate-x-1/2 w-[200px] h-[100px] text-blue-200 opacity-60"
-          viewBox="0 0 200 100"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            d="M100,0 L100,40 L80,60 M100,40 L120,60"
-          />
-          <circle cx="100" cy="0" r="3" fill="currentColor">
-            <animate
-              attributeName="r"
-              values="2;4;2"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </circle>
-          <circle cx="100" cy="40" r="2" fill="currentColor" />
-          <circle cx="80" cy="60" r="2" fill="currentColor" />
-          <circle cx="120" cy="60" r="2" fill="currentColor" />
-
-          <circle cx="100" cy="20" r="1.5" fill="currentColor">
-            <animate
-              attributeName="cy"
-              values="0;40;0"
-              dur="3s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </svg>
-
-        {/* Pulse animations on nodes - with fixed positions instead of random */}
-        {CIRCLE_POSITIONS.map((position, i) => (
-          <div key={i} className="absolute">
-            <motion.div
-              className="h-4 w-4 rounded-full bg-blue-500/20 absolute"
-              style={{
-                top: position.top,
-                left: position.left,
-              }}
-              animate={{
-                scale: [0.8, 1.5, 0.8],
-                opacity: [0.3, 0.8, 0.3],
-              }}
-              transition={{
-                duration: 2 + i * 0.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-            />
-          </div>
-        ))}
+   
       </div>
 
       <div className="container mx-auto flex flex-col items-center justify-center pt-20 py-5 md:pt-36 md:py-5 lg:pt-36 lg:py-5 text-center">
@@ -319,7 +265,7 @@ export default function Hero() {
                 style={{ border: "0.1px solid gray" }}
               ></span>
               <button className="bg-white font-medium text-black px-4 py-2 rounded-r-full rounded-l-none">
-                Introducing Workforce
+                Ai Optimise
               </button>
             </div>
           </div>
@@ -352,10 +298,11 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Apt is the only algo trading platform built exclusively for
-              brokers. Fully compliant, reliable, and designed to boost their
-              client retention. Discover an AI-powered automation platform that
-              makes algo trading simple, fast, and scalable.
+              Get your own algo trading platform, built exclusively for Indian
+              brokers 🇮🇳. It is simple, reliable and designed to boost trader
+              retention. The platform includes all mandatory algo compliance
+              management tools as outlined in SEBI's circular dated February 4,
+              2025.
             </motion.p>
           </div>
 
@@ -365,19 +312,26 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {/* Circuit connection to buttons - hidden on mobile */}
-            <div className="absolute left-1/2 -top-10 w-px h-10 bg-blue-200/30 hidden sm:block"></div>
-            <div className="absolute left-1/2 -translate-x-1/2 -top-5 w-3 h-3 rounded-full bg-blue-400/20 border border-blue-400/10 hidden sm:block"></div>
-
+            <div className="relative">
+              <input
+                type="email"
+                placeholder="Your work email"
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-white px-8 py-3 text-base font-normal text-black transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                style={{
+                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+                  border: "1px solid #E6E7EA",
+                  minWidth: "260px",
+                }}
+              />
+            </div>
             <Link
               href="#demo"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-600 px-8 py-3 text-base font-medium text-white shadow hover:bg-blue-500 transition-colors"
-            >
-              Try for free
-            </Link>
-            <Link
-              href="#demo"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 py-3 text-base font-medium text-black shadow hover:bg-gray-100 transition-colors"
+              style={{
+                background:
+                  "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
+                boxShadow: "0px 4px 4px 0px #00000040",
+              }}
+              className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
             >
               Request a demo
             </Link>

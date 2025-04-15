@@ -40,17 +40,16 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-7 lg:gap-10">
           {[
-            "Products",
-            "Solutions",
-            "Resources",
-            "Customers",
-            "Pricing",
-            "Careers",
+            "Home",
+            "Features",
+            "Built For Brokers",
+            "Compliance Management",
+            "Contact Us",
           ].map((item) => (
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-[15px] font-semibold text-gray-700 hover:text-blue-600 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-[15px] font-semibold text-[#272727] hover:text-blue-600 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
             >
               {item}
             </Link>
@@ -59,16 +58,15 @@ export default function Header() {
 
         <div className="flex items-center gap-4 md:gap-6">
           <Link
-            href="#trial"
-            className="hidden md:inline-flex h-10 items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-2 text-[15px] font-medium text-white transition-all duration-300 hover:shadow-md hover:shadow-blue-300/30 hover:-translate-y-0.5"
+            href="#demo"
+            style={{
+              background:
+                "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
+              boxShadow: "0px 4px 4px 0px #00000040",
+            }}
+            className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
           >
-            Sign Up
-          </Link>
-          <Link
-            href="#login"
-            className="hidden md:inline-flex h-10 items-center justify-center text-[15px] font-medium text-gray-700 hover:text-blue-600 transition-colors duration-150"
-          >
-            Login
+            Request a demo
           </Link>
           <button
             className="md:hidden p-1 transition-colors duration-150 hover:bg-gray-100 rounded-md"
@@ -142,18 +140,15 @@ export default function Header() {
                 ))}
                 <div className="pt-4 flex flex-col space-y-4">
                   <Link
-                    href="#trial"
-                    className="w-full inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-base font-medium text-white hover:shadow-md hover:shadow-blue-300/30 transition-all duration-150"
-                    onClick={() => setMobileMenuOpen(false)}
+                    href="#demo"
+                    style={{
+                      background:
+                        "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
+                      boxShadow: "0px 4px 4px 0px #00000040",
+                    }}
+                    className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
                   >
-                    Start a free trial
-                  </Link>
-                  <Link
-                    href="#login"
-                    className="w-full inline-flex h-10 items-center justify-center rounded-full border border-gray-200 px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Login
+                    Request a demo
                   </Link>
                 </div>
               </nav>
