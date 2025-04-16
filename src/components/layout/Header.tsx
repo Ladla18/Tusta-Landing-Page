@@ -19,6 +19,43 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle smooth scrolling to sections
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+
+    // Default to top of page for home
+    if (sectionId === "home") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setMobileMenuOpen(false);
+      return;
+    }
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offsetTop = section.offsetTop;
+      // Subtract header height to account for fixed header
+      window.scrollTo({
+        top: offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const navItems = [
+    { name: "Home", id: "home" },
+    { name: "Features", id: "features" },
+    { name: "Built For Brokers", id: "built-for-brokers" },
+    { name: "Compliance Management", id: "compliance-management" },
+    { name: "Contact Us", id: "contact-us" },
+  ];
+
   return (
     <header
       className={`fixed top-5 border-2 ${
@@ -28,7 +65,11 @@ export default function Header() {
       } shadow-lg z-50 w-10/12 left-1/2 -translate-x-1/2 rounded-xl py-1 transition-all duration-300`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          className="flex items-center"
+          onClick={(e) => scrollToSection(e, "home")}
+        >
           <Image
             src="/white_rect-removebg.png"
             alt="logo"
@@ -39,25 +80,20 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 lg:gap-10">
-          {[
-            "Home",
-            "Features",
-            "Built For Brokers",
-            "Compliance Management",
-            "Contact Us",
-          ].map((item) => (
-            <Link
-              key={item}
-              href={`#${item.toLowerCase()}`}
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={`#${item.id}`}
               className="text-[15px] font-semibold text-[#272727] hover:text-blue-600 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+              onClick={(e) => scrollToSection(e, item.id)}
             >
-              {item}
-            </Link>
+              {item.name}
+            </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-4 md:gap-6">
-          <Link
+          <a
             href="#demo"
             style={{
               background:
@@ -65,9 +101,10 @@ export default function Header() {
               boxShadow: "0px 4px 4px 0px #00000040",
             }}
             className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
+            onClick={(e) => scrollToSection(e, "demo")}
           >
             Request a demo
-          </Link>
+          </a>
           <button
             className="md:hidden p-1 transition-colors duration-150 hover:bg-gray-100 rounded-md"
             aria-label="Toggle menu"
@@ -115,31 +152,24 @@ export default function Header() {
           >
             <div className="container mx-auto px-4 py-4">
               <nav className="flex flex-col space-y-4">
-                {[
-                  "Products",
-                  "Solutions",
-                  "Resources",
-                  "Customers",
-                  "Pricing",
-                  "Careers",
-                ].map((item, i) => (
+                {navItems.map((item, i) => (
                   <motion.div
-                    key={item}
+                    key={item.name}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05, duration: 0.2 }}
                   >
-                    <Link
-                      href={`#${item.toLowerCase()}`}
+                    <a
+                      href={`#${item.id}`}
                       className="text-base font-medium text-gray-700 hover:text-blue-600 block py-2"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={(e) => scrollToSection(e, item.id)}
                     >
-                      {item}
-                    </Link>
+                      {item.name}
+                    </a>
                   </motion.div>
                 ))}
                 <div className="pt-4 flex flex-col space-y-4">
-                  <Link
+                  <a
                     href="#demo"
                     style={{
                       background:
@@ -147,9 +177,10 @@ export default function Header() {
                       boxShadow: "0px 4px 4px 0px #00000040",
                     }}
                     className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
+                    onClick={(e) => scrollToSection(e, "demo")}
                   >
                     Request a demo
-                  </Link>
+                  </a>
                 </div>
               </nav>
             </div>

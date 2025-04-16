@@ -53,7 +53,10 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-black text-white pt-24 relative overflow-hidden">
+    <section
+      id="contact-us"
+      className="bg-black text-white pt-24 relative overflow-hidden"
+    >
       {/* Subtle background effect */}
       <div className="absolute -top-40 -right-20 w-96 h-96 bg-gray-800/20 rounded-full blur-[120px]" />
       <div className="absolute -bottom-40 -left-20 w-96 h-96 bg-gray-700/20 rounded-full blur-[120px]" />
@@ -92,7 +95,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="backdrop-blur-sm bg-white/5 p-8 md:p-10 rounded-xl border border-white/10"
           >
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form id="demo" onSubmit={handleSubmit} className="space-y-8">
               <div>
                 <label
                   htmlFor="name"

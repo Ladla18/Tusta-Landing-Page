@@ -250,7 +250,10 @@ const FeatureCard = ({
 
 export default function BuiltForBrokers() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section
+      id="built-for-brokers"
+      className="py-24 bg-gradient-to-b from-white to-gray-50"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-20"
