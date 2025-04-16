@@ -6,6 +6,7 @@ import {
   useAnimationControls,
   MotionValue,
 } from "framer-motion";
+import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 const Journey = () => {
@@ -314,16 +315,32 @@ const timelineData: TimelineItem[] = [
       "SEBI legalized internet-based trading platforms. Early adopters like ICICI Direct, Geojit, and Sharekhan were among the first brokers to embrace this shift — giving them a significant edge in scaling their businesses. Over time, the rest of the market was forced to catch up as internet-based trading became the industry standard due to its accessibility and ease of use.",
     logos: [
       {
-        bgColor: "bg-green-500",
-        content: <span className="text-white text-xs font-bold">GEOJIT</span>,
+        bgColor: "",
+        content: (
+          <Image
+            src="/broker/image 1.png"
+            alt="GEOJIT"
+            width={100}
+            height={100}
+          />
+        ),
       },
       {
-        bgColor: "bg-orange-500",
-        content: <span className="text-white text-xs font-bold">ICICI</span>,
+        bgColor: "",
+        content: (
+          <Image
+            src="/broker/image 2.png"
+            alt="ICICI"
+            width={100}
+            height={100}
+          />
+        ),
       },
       {
-        bgColor: "bg-white",
-        content: <span className="text-orange-500 text-xs font-bold">SK</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/image 3.png" alt="SK" width={100} height={100} />
+        ),
       },
     ],
   },
@@ -334,16 +351,22 @@ const timelineData: TimelineItem[] = [
       "Brokers like Zerodha, Upstox, and Groww had a early-mover advantage by leading the shift to web & mobile-based trading — a move that helped them emerge as industry leaders. They dominate 48% of today's market participation.",
     logos: [
       {
-        bgColor: "bg-green-500",
-        content: <span className="text-white text-xs font-bold">GEOJIT</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/image 10.png" alt="" width={100} height={100} />
+        ),
       },
       {
-        bgColor: "bg-orange-500",
-        content: <span className="text-white text-xs font-bold">ICICI</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/image 11.png" alt="" width={100} height={100} />
+        ),
       },
       {
-        bgColor: "bg-white",
-        content: <span className="text-orange-500 text-xs font-bold">SK</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/image 13.png" alt="" width={100} height={100} />
+        ),
       },
     ],
   },
@@ -354,16 +377,22 @@ const timelineData: TimelineItem[] = [
       "SEBI legalized E-KYC for online account opening. 149 million new accounts have been opened since then.",
     logos: [
       {
-        bgColor: "bg-green-500",
-        content: <span className="text-white text-xs font-bold">GEOJIT</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/image 10.png" alt="" width={100} height={100} />
+        ),
       },
       {
-        bgColor: "bg-orange-500",
-        content: <span className="text-white text-xs font-bold">ICICI</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/image 11.png" alt="" width={100} height={100} />
+        ),
       },
       {
-        bgColor: "bg-white",
-        content: <span className="text-orange-500 text-xs font-bold">SK</span>,
+          bgColor: "",
+        content: (
+          <Image src="/broker/image 13.png" alt="" width={100} height={100} />
+        ),
       },
     ],
   },
@@ -374,16 +403,22 @@ const timelineData: TimelineItem[] = [
       "SEBI legalizes Algo Trading for retail investors for the first time — marking the biggest market shift since 2000. Leading brokers like Zerodha have already begun rolling out their platforms. As automation becomes the new standard, every broker will be expected to offer intelligent, compliant trading solutions. Those who move early will gain a edge in this pivotal transformation.",
     logos: [
       {
-        bgColor: "bg-green-500",
-        content: <span className="text-white text-xs font-bold">GEOJIT</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/image 10.png" alt="" width={100} height={100} />
+        ),
       },
       {
-        bgColor: "bg-orange-500",
-        content: <span className="text-white text-xs font-bold">ICICI</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/Group 38138.png" alt="" width={100} height={100} />
+        ),
       },
       {
-        bgColor: "bg-white",
-        content: <span className="text-orange-500 text-xs font-bold">SK</span>,
+        bgColor: "",
+        content: (
+          <Image src="/broker/Group 38138.png" alt="" width={100} height={100} />
+        ),
       },
     ],
   },

@@ -77,7 +77,7 @@ export default function OurFeatures() {
         </div>
 
         {/* Feature Carousel */}
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-4xl mx-auto relative">
           {/* Navigation Controls */}
           <div className="absolute top-1/2 -left-12 transform -translate-y-1/2 z-10">
             <button
@@ -236,7 +236,7 @@ export default function OurFeatures() {
           <div className="border-l border-r border-b border-gray-300 bg-white rounded-b-lg shadow-xl overflow-hidden">
             <div className="w-full h-full flex items-center justify-center overflow-hidden">
               <Image
-                src="/images/Screenshot 2025-04-11 135059.png"
+                src="/Group 38141.png"
                 alt="Feature preview"
                 className="max-w-full max-h-full object-contain"
                 width={1030}
