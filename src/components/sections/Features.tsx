@@ -100,7 +100,7 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/images/image.png"
+              src="/moibile.png"
               alt="Mobile view"
               className="max-w-full max-h-full object-contain"
               width={200}
@@ -120,7 +120,7 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/images/Screenshot 2025-04-11 135059.png"
+              src="/Screenshot 2025-04-11 at 11.30.06 AM 1.png"
               alt="Laptop view"
               className="max-w-full max-h-full object-contain"
               width={420}
@@ -133,7 +133,7 @@ export default function Features() {
       {/* Desktop view (original layout) */}
       <div className="hidden lg:flex justify-center px-4 relative gap-10 py-5">
         <motion.div
-          className="bg-white z-10 rounded-xl overflow-hidden w-[280px] h-[530px] flex items-center justify-center"
+          className="bg-white z-10 rounded-xl overflow-hidden w-[250px] py-1 h-[530px] flex items-center justify-center"
           style={{
             x: leftX,
             boxShadow:
@@ -143,9 +143,9 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/images/image.png"
+              src="/moibile.png"
               alt="Mobile view"
-              className="max-w-full max-h-full object-contain"
+              className="max-w-full max-h-full rounded-xl object-contain"
               width={240}
               height={480}
             />
@@ -153,7 +153,7 @@ export default function Features() {
         </motion.div>
 
         <motion.div
-          className="bg-white rounded-xl overflow-hidden w-[1100px] h-[530px] flex items-center justify-center"
+          className="bg-white rounded-xl overflow-hidden w-[970px] py-0.5 h-[530px] flex items-center justify-center"
           style={{
             x: rightX,
             boxShadow:
@@ -163,12 +163,13 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/images/Screenshot 2025-04-11 135059.png"
+              src="/Screenshot 2025-04-11 at 11.30.06 AM 1.png"
               alt="Laptop view"
               className="max-w-full max-h-full object-contain"
               width={1000}
               height={500}
             />
+          
           </div>
         </motion.div>
       </div>
