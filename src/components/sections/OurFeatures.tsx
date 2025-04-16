@@ -1,9 +1,68 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+// Features data from the table
+const featuresData = [
+  {
+    title: "SEBI-Compliant Algo Marketplace",
+    description:
+      "Offer your traders a regulatory-compliant platform where they can publish and use white-box or black-box strategies. Just two clicks to activate any strategy. Fully aligned with SEBI's latest guidelines.",
+  },
+  {
+    title: "AI-Powered Strategy Builder (No Code Required)",
+    description:
+      "Traders can build price, time, and indicator-based strategies just by typing their logic in plain English. Our AI converts it into executable algorithms instantly.",
+  },
+  {
+    title: "Automate Any TradingView Strategy",
+    description:
+      "Let traders automate over 1,500 free TradingView strategies or their custom Pine scripts within minutes. No manual coding, seamless integration.",
+  },
+  {
+    title: "Advanced Backtesting Engine",
+    description:
+      "Provide traders with rich, real-time backtesting reports including P&L curves, drawdown metrics, and success ratios — all in minutes.",
+  },
+  {
+    title: "AI-Powered Strategy Optimizer (First in India)",
+    description:
+      "Our AI tests millions of parameter combinations to suggest the most profitable inputs for any strategy. Personalized optimization per trader.",
+  },
+  {
+    title: "Pro-Grade Risk Management Suite",
+    description:
+      "Comes with 20+ built-in risk controls: max drawdown, capital lock, time-based exits, trailing stops, and more. Fully customizable per strategy and profile.",
+  },
+  {
+    title: "AI-Powered Trade Analytics & Insights",
+    description:
+      "Gives traders smart insights like which days their strategy works best, what time slots perform better, and volatility analysis.",
+  },
+  {
+    title: "Fully Mobile & Cross-Device Compatible",
+    description:
+      "Your clients can launch, monitor, and modify strategies on mobile or desktop. Smooth UX on all devices with real-time notifications.",
+  },
+];
 
 export default function OurFeatures() {
+  const [currentFeature, setCurrentFeature] = useState(0);
+
+  const nextFeature = () => {
+    setCurrentFeature((prev) =>
+      prev === featuresData.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevFeature = () => {
+    setCurrentFeature((prev) =>
+      prev === 0 ? featuresData.length - 1 : prev - 1
+    );
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
@@ -17,8 +76,53 @@ export default function OurFeatures() {
           </p>
         </div>
 
-        {/* Safari Browser Mockup */}
-        <div className="max-w-5xl mx-auto">
+        {/* Feature Carousel */}
+        <div className="max-w-5xl mx-auto relative">
+          {/* Navigation Controls */}
+          <div className="absolute top-1/2 -left-12 transform -translate-y-1/2 z-10">
+            <button
+              onClick={prevFeature}
+              className="bg-white p-3 rounded-full shadow-lg text-blue-600 hover:bg-blue-50 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 z-10">
+            <button
+              onClick={nextFeature}
+              className="bg-white p-3 rounded-full shadow-lg text-blue-600 hover:bg-blue-50 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Safari Browser Mockup */}
           <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-t-lg p-2 border border-gray-300">
             {/* Browser Header */}
             <div className="flex items-center">
@@ -133,21 +237,47 @@ export default function OurFeatures() {
             <div className="w-full h-full flex items-center justify-center overflow-hidden">
               <Image
                 src="/images/Screenshot 2025-04-11 135059.png"
-                alt="Mobile view"
+                alt="Feature preview"
                 className="max-w-full max-h-full object-contain"
                 width={1030}
                 height={1040}
               />
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center my-10">
-            <h1 className="text-2xl font-normal">Compliant Marketplace</h1>
-            <p className="text-gray-500 text-center">
-              Brokers like Zerodha, Upstox, and Groww had a early-mover
-              advantage by leading the shift to web & mobile-based trading — a
-              move that helped them emerge as industry leaders. They dominate
-              48% of today&apos;s market participation.
-            </p>
+
+          {/* Feature Info */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentFeature}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col justify-center items-center my-10"
+            >
+              <h3 className="text-2xl font-semibold text-blue-700 mb-4">
+                {featuresData[currentFeature].title}
+              </h3>
+              <p className="text-gray-600 text-center max-w-3xl">
+                {featuresData[currentFeature].description}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Indicator Dots */}
+          <div className="flex justify-center space-x-2 mt-4">
+            {featuresData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentFeature(index)}
+                className={`h-2 w-2 rounded-full transition-all ${
+                  currentFeature === index
+                    ? "bg-blue-600 w-6"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to feature ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
