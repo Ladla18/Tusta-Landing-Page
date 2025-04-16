@@ -4,14 +4,14 @@ import Link from "next/link";
 import Header from "../layout/Header";
 import { motion } from "framer-motion";
 
-// Predefined positions for the decorative circles to avoid hydration mismatches
-const CIRCLE_POSITIONS = [
-  { top: "20%", left: "15%" },
-  { top: "30%", left: "25%" },
-  { top: "35%", left: "75%" },
-  { top: "15%", left: "60%" },
-  { top: "25%", left: "40%" },
-];
+// Removed unused array
+// const CIRCLE_POSITIONS = [
+//   { top: "20%", left: "15%" },
+//   { top: "30%", left: "25%" },
+//   { top: "35%", left: "75%" },
+//   { top: "15%", left: "60%" },
+//   { top: "25%", left: "40%" },
+// ];
 
 export default function Hero() {
   return (
@@ -301,7 +301,7 @@ export default function Hero() {
               Get your own algo trading platform, built exclusively for Indian
               brokers 🇮🇳. It is simple, reliable and designed to boost trader
               retention. The platform includes all mandatory algo compliance
-              management tools as outlined in SEBI's circular dated February 4,
+              management tools as outlined in SEBI&apos;s circular dated February 4,
               2025.
             </motion.p>
           </div>

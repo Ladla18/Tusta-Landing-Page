@@ -43,7 +43,6 @@ export default function Compliances() {
                 alt="Compliance Management Platform"
                 className="w-full h-auto transform transition-transform duration-500 hover:scale-105"
               />
-           
             </div>
           </motion.div>
         </div>
