@@ -138,7 +138,7 @@ const HorizontalScrollCarousel = () => {
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="w-full h-full flex items-center relative">
-          <div className="relative w-full">
+          <div className="relative w-full mt-20">
             {/* Timeline line */}
             <div className="absolute h-1 bg-white/30 w-full top-12 left-0"></div>
 
@@ -389,7 +389,7 @@ const timelineData: TimelineItem[] = [
         ),
       },
       {
-          bgColor: "",
+        bgColor: "",
         content: (
           <Image src="/broker/image 13.png" alt="" width={100} height={100} />
         ),
@@ -411,13 +411,23 @@ const timelineData: TimelineItem[] = [
       {
         bgColor: "",
         content: (
-          <Image src="/broker/Group 38138.png" alt="" width={100} height={100} />
+          <Image
+            src="/broker/Group 38138.png"
+            alt=""
+            width={100}
+            height={100}
+          />
         ),
       },
       {
         bgColor: "",
         content: (
-          <Image src="/broker/Group 38138.png" alt="" width={100} height={100} />
+          <Image
+            src="/broker/Group 38138.png"
+            alt=""
+            width={100}
+            height={100}
+          />
         ),
       },
     ],

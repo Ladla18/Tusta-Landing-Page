@@ -16,8 +16,8 @@ export default function Home() {
       <OurFeatures />
       <BuiltForBrokers />
       <BrokeragePotential />
-      <Compliances />
-      <Countdown /> 
+      <Compliances /> 
+      <Countdown />
       <Contact />
     </main>
   );

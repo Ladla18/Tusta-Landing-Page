@@ -169,7 +169,6 @@ export default function Features() {
               width={1000}
               height={500}
             />
-          
           </div>
         </motion.div>
       </div>

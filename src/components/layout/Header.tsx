@@ -58,11 +58,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-5 border-2 ${
+      className={`fixed top-5 md:top-5 border-2 ${
         scrolled
           ? "border-gray-200 bg-white/95 backdrop-blur-sm"
           : "border-gray-100 bg-white"
-      } shadow-lg z-50 w-10/12 left-1/2 -translate-x-1/2 rounded-xl py-1 transition-all duration-300`}
+      } shadow-lg z-50 w-full md:w-10/12 left-0 md:left-1/2 md:-translate-x-1/2 rounded-xl py-1 transition-all duration-300`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link

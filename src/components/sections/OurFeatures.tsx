@@ -66,7 +66,7 @@ export default function OurFeatures() {
   return (
     <section
       id="features"
-      className="py-20 bg-gradient-to-b from-white to-gray-50"
+      className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -80,9 +80,9 @@ export default function OurFeatures() {
         </div>
 
         {/* Feature Carousel */}
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-4xl mx-auto relative px-12">
           {/* Navigation Controls */}
-          <div className="absolute top-1/2 -left-12 transform -translate-y-1/2 z-10">
+          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
             <button
               onClick={prevFeature}
               className="bg-white p-3 rounded-full shadow-lg text-blue-600 hover:bg-blue-50 transition-colors"
@@ -103,7 +103,7 @@ export default function OurFeatures() {
               </svg>
             </button>
           </div>
-          <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 z-10">
+          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
             <button
               onClick={nextFeature}
               className="bg-white p-3 rounded-full shadow-lg text-blue-600 hover:bg-blue-50 transition-colors"
