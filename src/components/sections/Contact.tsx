@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,8 @@ export default function Contact() {
   const [formStatus, setFormStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+
+  const [showNotification, setShowNotification] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,6 +38,13 @@ export default function Contact() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       console.log("Form submitted:", formData);
+      const response = await fetch("https://api.tusta.co/v2/custom/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
       // Reset form after submission
       setFormData({
         name: "",
@@ -44,10 +54,30 @@ export default function Contact() {
       });
 
       setFormStatus("success");
+      toast.success("Query Submitted successfully!", {
+        duration: 3000,
+        position: "bottom-center",
+        style: {
+          background: "#10B981",
+          color: "#fff",
+          padding: "16px",
+          borderRadius: "8px",
+        },
+      });
       setTimeout(() => setFormStatus("idle"), 3000);
     } catch (error) {
       console.error("Error submitting form:", error);
       setFormStatus("error");
+      toast.error("Failed to submit query. Please try again.", {
+        duration: 3000,
+        position: "bottom-center",
+        style: {
+          background: "#EF4444",
+          color: "#fff",
+          padding: "16px",
+          borderRadius: "8px",
+        },
+      });
       setTimeout(() => setFormStatus("idle"), 3000);
     }
   };
@@ -57,6 +87,37 @@ export default function Contact() {
       id="contact-us"
       className="bg-black text-white pt-24 relative overflow-hidden"
     >
+      <Toaster />
+
+      {/* Notification Toast */}
+      <AnimatePresence>
+        {showNotification && (
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -100, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            <span>Query Submitted successfully!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Subtle background effect */}
       <div className="absolute -top-40 -right-20 w-96 h-96 bg-gray-800/20 rounded-full blur-[120px]" />
       <div className="absolute -bottom-40 -left-20 w-96 h-96 bg-gray-700/20 rounded-full blur-[120px]" />
