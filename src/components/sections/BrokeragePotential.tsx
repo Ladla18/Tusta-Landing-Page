@@ -15,12 +15,13 @@ export default function BrokeragePotential() {
 
   // Update calculations when slider values change
   useEffect(() => {
-    const MARKET_DAYS_PER_MONTH = 22;
-    const MARKET_DAYS_PER_YEAR = 224;
+    const MARKET_DAYS_PER_MONTH = 24;
+    const MARKET_DAYS_PER_YEAR = 250;
 
-    const dailyRevenue = numTraders * tradesPerDay * brokeragePerTrade;
-    const monthly = dailyRevenue * MARKET_DAYS_PER_MONTH;
-    const yearly = dailyRevenue * MARKET_DAYS_PER_YEAR;
+    const monthly =
+      tradesPerDay * brokeragePerTrade * MARKET_DAYS_PER_MONTH * numTraders;
+    const yearly =
+      tradesPerDay * brokeragePerTrade * MARKET_DAYS_PER_YEAR * numTraders;
 
     // Format numbers with commas for Indian numbering system
     setMonthlyRevenue(formatIndianRupees(monthly));
@@ -212,7 +213,7 @@ export default function BrokeragePotential() {
                     clipRule="evenodd"
                   />
                 </svg>
-                22 Market days are calculated in a month.
+                24 Market days are calculated in a month.
               </p>
             </motion.div>
 
@@ -244,7 +245,7 @@ export default function BrokeragePotential() {
                     clipRule="evenodd"
                   />
                 </svg>
-                224 Market days are calculated in a year.
+                250 Market days are calculated in a year.
               </p>
             </motion.div>
           </motion.div>
