@@ -121,7 +121,7 @@ export default function Compliances() {
               {/* Dots overlay */}
               <div className="absolute inset-0 z-10">
                 {/* Exchange Request dot */}
-                <div className="absolute top-[15%] left-[22%] group">
+                <div className="absolute top-[15%] left-[26%] group">
                   <Tooltip content={complianceData.algoRegistration}>
                     <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
@@ -191,7 +191,7 @@ export default function Compliances() {
                 </div>
 
                 {/* Algo Creation dot */}
-                <div className="absolute top-[75%] left-[22%] group">
+                <div className="absolute top-[75%] left-[29%] group">
                   <Tooltip content={complianceData.algoCreation}>
                     <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
