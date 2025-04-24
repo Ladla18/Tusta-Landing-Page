@@ -40,7 +40,7 @@ export default function Features() {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-gray-50 overflow-hidden py-12 min-h-screen"
+      className="bg-gradient-to-b from-white to-gray-50 overflow-hidden py-12 min-h-[90vh]"
     >
       {/* Mobile view (stacked layout) */}
       <div className="md:hidden flex flex-col items-center px-4 space-y-8 py-12">
