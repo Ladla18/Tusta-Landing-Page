@@ -8,16 +8,33 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Detect scroll position to change header style
+  // Detect scroll position to change header style and visibility
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      
+      // Determine if we're scrolling up or down
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past initial threshold - hide the header
+        setVisible(false);
+      } else {
+        // Scrolling up - show the header
+        setVisible(true);
+      }
+      
+      // Update styles based on scroll position
+      setScrolled(currentScrollY > 20);
+      
+      // Update the last scroll position
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Handle smooth scrolling to sections
   const scrollToSection = (
@@ -57,12 +74,20 @@ export default function Header() {
   ];
 
   return (
-    <header
+    <motion.header
       className={`fixed top-5 md:top-5 border-2 ${
         scrolled
           ? "border-gray-200 bg-white/95 backdrop-blur-sm"
           : "border-gray-100 bg-white"
-      } shadow-lg z-50 w-full md:w-10/12 left-0 md:left-1/2 md:-translate-x-1/2 rounded-xl py-1 transition-all duration-300`}
+      } shadow-lg z-50 w-full md:w-10/12 left-0 md:left-1/2 md:-translate-x-1/2 rounded-xl py-1 transition-colors duration-300`}
+      initial={{ y: 0 }}
+      animate={{ 
+        y: visible ? 0 : -150,
+        transition: { 
+          duration: 0.3, 
+          ease: "easeInOut" 
+        }
+      }}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link
@@ -187,6 +212,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }

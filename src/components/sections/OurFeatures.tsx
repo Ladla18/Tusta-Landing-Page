@@ -326,7 +326,7 @@ export default function OurFeatures() {
           </AnimatePresence>
 
           {/* Indicator Dots */}
-          <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <div className="flex flex-wrap sm:hidden   justify-center gap-2 mt-4">
             {featuresData.map((_, index) => (
               <button
                 key={index}
