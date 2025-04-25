@@ -64,7 +64,7 @@ export default function Hero() {
           </div>
 
           <motion.div
-            className="flex sm:flex-row justify-center gap-4 mt-8 relative"
+            className="flex flex-col sm:flex-row justify-center gap-4 mt-8 relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -88,7 +88,7 @@ export default function Hero() {
                   "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
                 boxShadow: "0px 4px 4px 0px #00000040",
               }}
-              className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
+              className="inline-flex h-12 w-8/12 mx-auto items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
             >
               Request a demo
             </Link>
