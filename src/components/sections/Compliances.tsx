@@ -113,7 +113,7 @@ export default function Compliances() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative max-w-3xl mx-auto px-6"
+            className="relative w-7xl mx-auto px-6"
           >
             
 
@@ -121,93 +121,93 @@ export default function Compliances() {
               {/* Dots overlay */}
               <div className="absolute inset-0 z-10">
                 {/* Exchange Request dot */}
-                <div className="absolute top-[15%] left-[26%] group">
+                <div className="absolute top-[1%] left-[25%] group">
                   <Tooltip content={complianceData.algoRegistration}>
-                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Status Management dot */}
-                <div className="absolute top-[15%] left-[42%] group">
+                <div className="absolute top-[0%] left-[40%] group">
                   <Tooltip content={complianceData.statusManagement}>
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40 rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Audit Trail dot */}
-                <div className="absolute top-[15%] left-[62%] group">
+                <div className="absolute top-[0%] left-[58%] group">
                   <Tooltip content={complianceData.auditTrail}>
-                    <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40 brounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Broker API dot */}
-                <div className="absolute top-[15%] left-[82%] group">
+                <div className="absolute top-[0%] left-[75%] group">
                   <Tooltip content={complianceData.algoRegistration}>
-                    <div className="w-3 h-3 bg-blue-600 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40 rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Exchange dot */}
-                <div className="absolute top-[15%] left-[92%] group">
+                <div className="absolute top-[0%] left-[90%] group">
                   <Tooltip content={complianceData.algoRegistration}>
-                    <div className="w-3 h-3 bg-black rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40 rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Admin Broker dot */}
-                <div className="absolute top-[45%] left-[12%] group">
+                <div className="absolute top-[38%] left-[0%] group">
                   <Tooltip content={complianceData.brokerDashboard}>
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Simulation dot */}
-                <div className="absolute top-[45%] left-[32%] group">
+                <div className="absolute top-[40%] left-[26%] group">
                   <Tooltip content={complianceData.simulation}>
-                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40 rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Kill Switch dot */}
-                <div className="absolute top-[45%] left-[50%] group">
+                <div className="absolute top-[37%] left-[40%] group">
                   <Tooltip content={complianceData.killSwitch}>
-                    <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Billing dot */}
-                <div className="absolute top-[45%] left-[70%] group">
+                <div className="absolute top-[37%] left-[60%] group">
                   <Tooltip content={complianceData.billing}>
-                    <div className="w-3 h-3 bg-gray-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Support dot */}
-                <div className="absolute top-[45%] left-[89%] group">
+                <div className="absolute top-[37%] left-[78%] group">
                   <Tooltip content={complianceData.support}>
-                    <div className="w-3 h-3 bg-gray-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Algo Creation dot */}
-                <div className="absolute top-[75%] left-[29%] group">
+                <div className="absolute top-[75%] left-[22%] group">
                   <Tooltip content={complianceData.algoCreation}>
-                    <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Strategy dot */}
-                <div className="absolute top-[75%] left-[52%] group">
+                <div className="absolute top-[75%] left-[48%] group">
                   <Tooltip content={complianceData.strategy}>
-                    <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-40 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
 
                 {/* Trader/RA dot */}
-                <div className="absolute top-[75%] left-[80%] group">
+                <div className="absolute top-[75%] left-[68%] group">
                   <Tooltip content={complianceData.algoCreation}>
-                    <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse cursor-pointer"></div>
+                    <div className="w-80 h-40  rounded-full animate-pulse cursor-pointer"></div>
                   </Tooltip>
                 </div>
               </div>
