@@ -130,7 +130,7 @@ export default function Features() {
             >
               <div className="w-full px-2 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/images/Screenshot 2025-04-11 135059.png"
+                  src="/Group 38141.png"
                   alt="Laptop view"
                   className="w-full h-auto object-contain rounded-lg"
                   width={410}
@@ -155,7 +155,6 @@ export default function Features() {
             />
           ))}
         </div>
-
       </div>
 
       {/* Tablet view (adjusted sizes) */}
@@ -191,7 +190,7 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/Screenshot 2025-04-11 at 11.30.06 AM 1.png"
+              src="/Group 38141.png"
               alt="Laptop view"
               className="max-w-full max-h-full object-contain"
               width={420}
@@ -234,7 +233,7 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/Screenshot 2025-04-11 at 11.30.06 AM 1.png"
+              src="/Group 38141.png"
               alt="Laptop view"
               className="max-w-full max-h-full object-contain"
               width={1000}

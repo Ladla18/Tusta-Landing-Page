@@ -106,7 +106,7 @@ export default function OurFeatures() {
         {/* Feature Carousel */}
         <div className="max-w-4xl mx-auto relative px-4 md:px-12">
           {/* Navigation Controls - Only visible on non-mobile */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 hidden md:block">
+          <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 z-10 hidden md:block">
             <button
               onClick={prevFeature}
               className="bg-white p-3 rounded-full shadow-lg text-blue-600 hover:bg-blue-50 transition-colors"
@@ -127,7 +127,7 @@ export default function OurFeatures() {
               </svg>
             </button>
           </div>
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 hidden md:block">
+          <div className="absolute top-1/2 -right-10 transform -translate-y-1/2 z-10 hidden md:block">
             <button
               onClick={nextFeature}
               className="bg-white p-3 rounded-full shadow-lg text-blue-600 hover:bg-blue-50 transition-colors"
@@ -303,24 +303,7 @@ export default function OurFeatures() {
               </div>
             </motion.div>
 
-            {/* Swipe instruction */}
-            <div className="text-center text-xs text-gray-500 mt-2 flex justify-center items-center">
-              <svg
-                className="w-4 h-4 mr-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                />
-              </svg>
-              Swipe to navigate
-            </div>
+          
           </div>
 
           {/* Feature Info */}
