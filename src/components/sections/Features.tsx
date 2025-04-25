@@ -5,8 +5,7 @@ import {
   motion,
   useScroll,
   useTransform,
-  AnimatePresence,
-  PanInfo,
+ 
 } from "framer-motion";
 import Image from "next/image";
 
