@@ -88,7 +88,7 @@ export default function Hero() {
                   "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
                 boxShadow: "0px 4px 4px 0px #00000040",
               }}
-              className="inline-flex h-12 w-8/12 mx-auto items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
+              className="inline-flex h-12 sm:w-auto w-8/12 mx-auto sm:mx-0 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
             >
               Request a demo
             </Link>
