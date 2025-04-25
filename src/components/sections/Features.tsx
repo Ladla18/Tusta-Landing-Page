@@ -32,18 +32,7 @@ export default function Features() {
     ["-10%", "0%", "0%", "-10%"]
   );
 
-  // For mobile, apply fade in and scale animation instead of horizontal movement
-  const mobileOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    [0.6, 1, 1, 0.6]
-  );
 
-  const mobileScale = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    [0.9, 1, 1, 0.9]
-  );
 
   // Track active slide for dots
   useEffect(() => {
