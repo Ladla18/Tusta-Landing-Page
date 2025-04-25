@@ -85,10 +85,7 @@ const complianceData = {
 
 export default function Compliances() {
   return (
-    <section
-      id="compliance-management"
-      className="py-24 bg-white"
-    >
+    <section id="compliance-management" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -106,17 +103,15 @@ export default function Compliances() {
           </p>
         </motion.div>
 
-        <div className="sm:flex justify-center hidden">
+        <div className="sm:flex justify-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative w-7xl mx-auto px-6"
+            className="relative max-w-7xl hidden sm:block mx-auto px-6"
           >
-            
-
             <div className="relative rounded-2xl shadow-xl border border-gray-200">
               {/* Dots overlay */}
               <div className="absolute inset-0 z-10">
@@ -220,10 +215,19 @@ export default function Compliances() {
               />
             </div>
           </motion.div>
+          <div className="sm:hidden">
+            <div className="flex flex-col gap-4">
+              <Image
+                src="/images/image 18.jpg"
+                width={800}
+                height={500}
+                alt="Compliance Management Platform"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
       </div>
-
-
     </section>
   );
 }
