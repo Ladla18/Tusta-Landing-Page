@@ -261,7 +261,7 @@ const TimelineCard = ({
 }) => {
   return (
     <motion.div
-      className="sm:w-1/2 w-full relative px-2 sm:px-10 md:px-20 lg:px-30 xl:px-40"
+      className="sm:w-1/2 w-full relative px-8 sm:px-10 md:px-20 lg:px-30 xl:px-40"
       style={{ opacity }}
     >
       {/* Year and marker */}
