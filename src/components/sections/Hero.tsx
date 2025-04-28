@@ -72,11 +72,9 @@ export default function Hero() {
             <Link
               href="#contact-us"
               style={{
-                background:
-                  "linear-gradient(102.61deg, #6805FE 41.19%, #5271FF 124.6%)",
-                boxShadow: "0px 4px 4px 0px #00000040",
+                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
               }}
-              className="inline-flex h-12 items-center justify-center rounded-lg hover:bg-indigo-700 px-8 py-3 text-base font-medium text-white shadow transition-colors sm:w-auto w-8/12 mx-auto sm:mx-0"
+              className="inline-flex h-12 items-center justify-center rounded-lg bg-white text-black hover:bg-gray-100 px-8 py-3 text-base font-medium shadow transition-colors sm:w-auto w-8/12 mx-auto sm:mx-0 border border-gray-200"
             >
               Get in touch
             </Link>
