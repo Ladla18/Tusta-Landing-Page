@@ -14,11 +14,15 @@ export const metadata: Metadata = {
   description: "Apt. Trading Platform",
   icons: {
     icon: [
-      { url: "/Untitled design (1).png" },
-      { url: "/Untitled design (1).png", sizes: "16x16", type: "image/png" },
+      { url: "/Untitled design (2).png" },
+      {
+        url: "/Untitled design (2).png",
+        sizes: "16x16",
+        type: "image/png",
+      },
     ],
     apple: {
-      url: "/Untitled design (1).png",
+      url: "/Untitled design (2).png",
       sizes: "40x20",
       type: "image/png",
     },
