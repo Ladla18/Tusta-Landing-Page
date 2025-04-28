@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   description: "Apt. Trading Platform",
   icons: {
     icon: [
-      { url: "/images/darkmodelogo.png" },
-      { url: "/images/darkmodelogo.png", sizes: "40x20", type: "image/png" },
+      { url: "/Untitled design (1).png" },
+      { url: "/Untitled design (1).png", sizes: "16x16", type: "image/png" },
     ],
     apple: {
-      url: "/images/darkmodelogo.png",
+      url: "/Untitled design (1).png",
       sizes: "40x20",
       type: "image/png",
     },

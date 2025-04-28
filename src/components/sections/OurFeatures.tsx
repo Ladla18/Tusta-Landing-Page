@@ -16,7 +16,7 @@ const featuresData = [
     title: "AI-Powered Strategy Builder (No Code Required)",
     description:
       "Traders can build price, time, and indicator-based strategies just by typing their logic in plain English. Our AI converts it into executable algorithms instantly.",
-    image: "/backtest.gif",
+    image: "/features/backtest.gif",
   },
   {
     title: "Automate Any TradingView Strategy",
@@ -152,32 +152,19 @@ export default function OurFeatures() {
           {/* Desktop Browser Mockup - Hidden on Mobile */}
           <div className="hidden md:block">
             {/* Safari Browser Mockup */}
-            <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-t-lg p-2 border border-gray-300">
-              {/* Browser Header */}
-              <div className="flex items-center">
-                {/* Window Controls */}
-                <div className="flex space-x-2 mr-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-
-                {/* Tab Bar */}
-                <div className="flex-1 flex items-center">
-                  <div className="bg-white rounded-t-lg border-t border-l border-r border-gray-300 flex items-center py-1 px-4 text-xs text-gray-700 font-medium">
-                    <div className="mr-2 w-3 h-3 rounded-full bg-blue-500"></div>
-                    Trading Dashboard
-                  </div>
-                  <div className="ml-1 bg-gray-100 rounded-t-lg border-t border-l border-r border-gray-300 flex items-center py-1 px-4 text-xs text-gray-500 font-medium">
-                    <div className="mr-2 w-3 h-3 rounded-full bg-gray-400"></div>
-                    Market Analysis
-                  </div>
-                </div>
-              </div>
-
+            <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-t-lg py-1 px-2 border border-gray-300">
               {/* Address Bar */}
               <div className="mt-2 flex items-center bg-white rounded-md border border-gray-300 px-2 py-1">
                 <div className="flex space-x-3 mr-3">
+                  {/* Browser Header */}
+                  <div className="flex items-center">
+                    {/* Window Controls */}
+                    <div className="flex space-x-2 mr-4">
+                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                  </div>
                   <button className="text-gray-400 hover:text-gray-700">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -302,8 +289,6 @@ export default function OurFeatures() {
                 />
               </div>
             </motion.div>
-
-          
           </div>
 
           {/* Feature Info */}

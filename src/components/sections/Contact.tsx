@@ -88,7 +88,7 @@ export default function Contact() {
   return (
     <section
       id="contact-us"
-      className="bg-black text-white pt-24 relative overflow-hidden"
+      className="bg-black text-white pt-24 relative overflow-hidden mt-5"
     >
       <Toaster />
 
@@ -316,7 +316,7 @@ export default function Contact() {
         </div>
 
         {/* Footer */}
-        <div className="mt-24 pt-10 border-t border-white/10">
+        <div className="mt-24 pt-10 border-t border-white/10 pb-5">
           <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto">
             <motion.div
               className="mb-6 md:mb-0"
