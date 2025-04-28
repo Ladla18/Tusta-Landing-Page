@@ -10,16 +10,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Apt.",
+  title: "Apt - Algo Infrastructure for Indian Brokers",
   description: "Apt. Trading Platform",
   icons: {
     icon: [
       { url: "/images/darkmodelogo.png" },
-      { url: "/images/darkmodelogo.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/darkmodelogo.png", sizes: "40x20", type: "image/png" },
     ],
     apple: {
       url: "/images/darkmodelogo.png",
-      sizes: "180x180",
+      sizes: "40x20",
       type: "image/png",
     },
   },

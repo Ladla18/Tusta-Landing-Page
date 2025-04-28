@@ -69,20 +69,19 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="relative">
-              <input
-                type="email"
-                placeholder="Your work email"
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-white px-8 py-3 text-base font-normal text-black transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                style={{
-                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-                  border: "1px solid #E6E7EA",
-                  minWidth: "260px",
-                }}
-              />
-            </div>
             <Link
-              href="#demo"
+              href="#contact-us"
+              style={{
+                background:
+                  "linear-gradient(102.61deg, #6805FE 41.19%, #5271FF 124.6%)",
+                boxShadow: "0px 4px 4px 0px #00000040",
+              }}
+              className="inline-flex h-12 items-center justify-center rounded-lg hover:bg-indigo-700 px-8 py-3 text-base font-medium text-white shadow transition-colors sm:w-auto w-8/12 mx-auto sm:mx-0"
+            >
+              Get in touch
+            </Link>
+            <Link
+              href="https://calendly.com/param-apt/30min"
               style={{
                 background:
                   "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
@@ -90,7 +89,7 @@ export default function Hero() {
               }}
               className="inline-flex h-12 sm:w-auto w-8/12 mx-auto sm:mx-0 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
             >
-              Request a demo
+              Schedule a demo
             </Link>
           </motion.div>
         </div>

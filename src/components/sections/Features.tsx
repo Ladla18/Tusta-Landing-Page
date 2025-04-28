@@ -1,18 +1,14 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
- 
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
 export default function Features() {
   const sectionRef = useRef(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -31,8 +27,6 @@ export default function Features() {
     [0, 0.4, 0.9, 1],
     ["-10%", "0%", "0%", "-10%"]
   );
-
-
 
   // Track active slide for dots
   useEffect(() => {
@@ -66,6 +60,11 @@ export default function Features() {
     });
   };
 
+  // Function to handle play button click
+  const handlePlayClick = () => {
+    setShowVideo(true);
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -95,7 +94,7 @@ export default function Features() {
             >
               <div className="w-full h-full flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/moibile.png"
+                  src="/Home Mobile.png"
                   alt="Mobile view"
                   className="max-w-full max-h-full object-contain"
                   width={240}
@@ -158,7 +157,7 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/moibile.png"
+              src="/Home Mobile.png"
               alt="Mobile view"
               className="max-w-full max-h-full object-contain"
               width={200}
@@ -201,7 +200,7 @@ export default function Features() {
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
             <Image
-              src="/moibile.png"
+              src="/Home Mobile.png"
               alt="Mobile view"
               className="max-w-full max-h-full rounded-xl object-contain"
               width={240}
@@ -211,7 +210,7 @@ export default function Features() {
         </motion.div>
 
         <motion.div
-          className="bg-white rounded-xl overflow-hidden w-[970px] py-0.5 h-[530px] flex items-center justify-center"
+          className="bg-white rounded-xl overflow-hidden w-[970px] py-0.5 h-[530px] flex items-center justify-center relative"
           style={{
             x: rightX,
             boxShadow:
@@ -220,13 +219,47 @@ export default function Features() {
           }}
         >
           <div className="w-full h-full flex items-center justify-center overflow-hidden">
-            <Image
-              src="/Group 38141.png"
-              alt="Laptop view"
-              className="max-w-full max-h-full object-contain"
-              width={1000}
-              height={500}
-            />
+            {showVideo ? (
+              <iframe
+                src="https://www.youtube.com/embed/74kvtqMUc4A?autoplay=1"
+                title="APT Trading Platform Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+              ></iframe>
+            ) : (
+              <div className="relative w-full h-full">
+                <Image
+                  src="/Group 38141.png"
+                  alt="Laptop view"
+                  className="max-w-full max-h-full object-contain"
+                  width={1000}
+                  height={500}
+                />
+                <div
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer group"
+                  onClick={handlePlayClick}
+                >
+                  <div className="relative flex items-center justify-center">
+                    <div className="w-20 h-20 bg-blue-600/90 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-blue-700">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-10 w-10 text-white transition-transform duration-300 group-hover:scale-110"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="absolute -inset-4 bg-blue-500/20 rounded-full animate-ping opacity-50"></div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
       </div>

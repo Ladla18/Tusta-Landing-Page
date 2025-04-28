@@ -15,7 +15,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Determine if we're scrolling up or down
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         // Scrolling down & past initial threshold - hide the header
@@ -24,10 +24,10 @@ export default function Header() {
         // Scrolling up - show the header
         setVisible(true);
       }
-      
+
       // Update styles based on scroll position
       setScrolled(currentScrollY > 20);
-      
+
       // Update the last scroll position
       setLastScrollY(currentScrollY);
     };
@@ -81,12 +81,12 @@ export default function Header() {
           : "border-gray-100 bg-white"
       } shadow-lg z-50 w-full md:w-10/12 left-0 md:left-1/2 md:-translate-x-1/2 rounded-xl py-1 transition-colors duration-300`}
       initial={{ y: 0 }}
-      animate={{ 
+      animate={{
         y: visible ? 0 : -150,
-        transition: { 
-          duration: 0.3, 
-          ease: "easeInOut" 
-        }
+        transition: {
+          duration: 0.3,
+          ease: "easeInOut",
+        },
       }}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
@@ -106,30 +106,31 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-7 lg:gap-10">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={`#${item.id}`}
               className="text-[15px] font-semibold text-[#272727] hover:text-blue-600 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
               onClick={(e) => scrollToSection(e, item.id)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-4 md:gap-6">
-          <a
-            href="#demo"
+          <Link
+            href="https://calendly.com/param-apt/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               background:
                 "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
               boxShadow: "0px 4px 4px 0px #00000040",
             }}
             className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
-            onClick={(e) => scrollToSection(e, "demo")}
           >
-            Request a demo
-          </a>
+            Schedule a demo
+          </Link>
           <button
             className="md:hidden p-1 transition-colors duration-150 hover:bg-gray-100 rounded-md"
             aria-label="Toggle menu"
@@ -184,28 +185,29 @@ export default function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05, duration: 0.2 }}
                   >
-                    <a
+                    <Link
                       href={`#${item.id}`}
                       className="text-base font-medium text-gray-700 hover:text-blue-600 block py-2"
                       onClick={(e) => scrollToSection(e, item.id)}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </motion.div>
                 ))}
                 <div className="pt-4 flex flex-col space-y-4">
-                  <a
-                    href="#demo"
+                  <Link
+                    href="https://calendly.com/param-apt/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       background:
                         "linear-gradient(102.61deg, #5271FF 41.19%, #6805FE 124.6%)",
                       boxShadow: "0px 4px 4px 0px #00000040",
                     }}
                     className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white shadow transition-colors"
-                    onClick={(e) => scrollToSection(e, "demo")}
                   >
-                    Request a demo
-                  </a>
+                    Schedule a demo
+                  </Link>
                 </div>
               </nav>
             </div>

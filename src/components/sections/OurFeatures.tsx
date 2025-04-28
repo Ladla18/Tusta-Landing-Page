@@ -10,7 +10,7 @@ const featuresData = [
     title: "SEBI-Compliant Algo Marketplace",
     description:
       "Offer your traders a regulatory-compliant platform where they can publish and use white-box or black-box strategies. Just two clicks to activate any strategy. Fully aligned with SEBI's latest guidelines.",
-    image: "/AI STrat Builder.gif",
+    image: "/features/Market Place.gif",
   },
   {
     title: "AI-Powered Strategy Builder (No Code Required)",
@@ -22,37 +22,37 @@ const featuresData = [
     title: "Automate Any TradingView Strategy",
     description:
       "Let traders automate over 1,500 free TradingView strategies or their custom Pine scripts within minutes. No manual coding, seamless integration.",
-    image: "/Group 38141.png",
+    image: "/features/TradingView.gif",
   },
   {
     title: "Advanced Backtesting Engine",
     description:
       "Provide traders with rich, real-time backtesting reports including P&L curves, drawdown metrics, and success ratios — all in minutes.",
-    image: "/Group 38141.png",
+    image: "/features/backtest.gif",
   },
   {
     title: "AI-Powered Strategy Optimizer (First in India)",
     description:
       "Our AI tests millions of parameter combinations to suggest the most profitable inputs for any strategy. Personalized optimization per trader.",
-    image: "/Group 38141.png",
+    image: "/features/AI STrat Builder.gif",
   },
   {
     title: "Pro-Grade Risk Management Suite",
     description:
       "Comes with 20+ built-in risk controls: max drawdown, capital lock, time-based exits, trailing stops, and more. Fully customizable per strategy and profile.",
-    image: "/Group 38141.png",
+    image: "/features/risk management.gif",
   },
   {
     title: "AI-Powered Trade Analytics & Insights",
     description:
       "Gives traders smart insights like which days their strategy works best, what time slots perform better, and volatility analysis.",
-    image: "/Group 38141.png",
+    image: "/features/Analysis.gif",
   },
   {
     title: "Fully Mobile & Cross-Device Compatible",
     description:
       "Your clients can launch, monitor, and modify strategies on mobile or desktop. Smooth UX on all devices with real-time notifications.",
-    image: "/Group 38141.png",
+    image: "/features/mobile.gif",
   },
 ];
 
